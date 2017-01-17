@@ -1,0 +1,7 @@
+"UnlitGeneric" 
+{ 
+	"$basetexture"		"SCarHUD/rev" 
+	"$vertexcolor" 		1 
+	"$vertexalpha" 		1 
+	"$nolod" 		1 
+} 

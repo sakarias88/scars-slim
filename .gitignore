@@ -1,0 +1,21 @@
+# Skip shady stuff
+luac.out
+*.dll
+*.so
+*.so.*
+*.dylib
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Do not want any additional content unless it is intentional
+/materials
+/models
+/resource
+/sound
+
+# Should not need to change this
+addon.json

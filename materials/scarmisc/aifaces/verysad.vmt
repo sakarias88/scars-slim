@@ -1,0 +1,12 @@
+
+"VertexLitGeneric"
+{
+	// Original shader: VertexLitTexture
+	"$basetexture" "SCarMisc/AIfaces/verysad"
+	"$selfillum" "1"
+	"$surfaceprop" "plastic"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ .4 .4 .4]"
+	"$envmapmask" "SCarMisc/AIfaces/face_mask"
+	
+}

@@ -1,0 +1,7 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "metal/metalhull013a"
+	"%keywords" "borealis"
+	"$surfaceprop"  "metal"
+
+}

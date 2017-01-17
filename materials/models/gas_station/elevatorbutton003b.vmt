@@ -1,0 +1,8 @@
+"vertexlitgeneric"
+{
+	// original shader: basetimeslightmapselfillum
+	"$basetexture" "props/elevatorbutton003b"
+	"$selfillum" 1
+	"$surfaceprop" "metalpanel"
+	"%keywords" "c17skyscraper"
+}
