@@ -1,5 +1,5 @@
 local AI = {}
-AI.Title = "Wander"
+AI.Title = "#tool.caraispawner.wander"
 AI.Author = "Sakarias88"
 
 AI.whiskerHit = false

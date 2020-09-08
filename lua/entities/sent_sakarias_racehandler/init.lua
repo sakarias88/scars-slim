@@ -69,7 +69,7 @@ function ENT:Initialize()
 	self.EnterButton:SetTriggerFunction( "AddParticipator", 1 )
 	self.EnterButton:SetParent(self)
 	self.EnterButton:Spawn()
-	self.EnterButton:SetButtonText( "Enter" )
+	self.EnterButton:SetButtonText( "#checkpoint.enter" )
 
 	self.LeaveButton = ents.Create( "sent_Sakarias_RaceHandlerButton" )
 	self.LeaveButton:SetPos( self:GetPos() + self:GetRight() * 30 + self:GetUp() * 10 + self:GetForward() * 15 )
@@ -78,7 +78,7 @@ function ENT:Initialize()
 	self.LeaveButton:SetTriggerFunction( "AddParticipator", 2 )
 	self.LeaveButton:SetParent(self)
 	self.LeaveButton:Spawn()
-	self.LeaveButton:SetButtonText( "Leave" )
+	self.LeaveButton:SetButtonText( "#checkpoint.leave" )
 
 	self.StartButton = ents.Create( "sent_Sakarias_RaceHandlerButton" )
 	self.StartButton:SetPos( self:GetPos() + self:GetRight() * -25 + self:GetUp() * 20 )
@@ -87,7 +87,7 @@ function ENT:Initialize()
 	self.StartButton:SetTriggerFunction( "AddParticipator", 3 )
 	self.StartButton:SetParent(self)
 	self.StartButton:Spawn()
-	self.StartButton:SetButtonText( "Start" )
+	self.StartButton:SetButtonText( "#checkpoint.start" )
 
 	self.StopButton = ents.Create( "sent_Sakarias_RaceHandlerButton" )
 	self.StopButton:SetPos( self:GetPos() + self:GetRight() * -30 + self:GetUp() * 10 + self:GetForward() * 15  )
@@ -96,7 +96,7 @@ function ENT:Initialize()
 	self.StopButton:SetTriggerFunction( "AddParticipator", 4 )
 	self.StopButton:SetParent(self)
 	self.StopButton:Spawn()
-	self.StopButton:SetButtonText( "Reset" )
+	self.StopButton:SetButtonText( "#checkpoint.reset" )
 
 	self.LapButton = ents.Create( "sent_Sakarias_RaceHandlerButton" )
 	self.LapButton:SetPos( self:GetPos() + self:GetUp() * 20 + self:GetForward() * 10  )
@@ -148,22 +148,22 @@ function ENT:TriggerFunc( id , ply )
 		if participate != 0 then
 			self:StartRace( ply )
 		else
-			self:SendRaceMessage( "You have to be a participant"..self.SeparationSign.."to start the race", 5, ply )
+			self:SendRaceMessage( "#checkpoint.you_have_to_be_participant"..self.SeparationSign.."#checkpoint.to_start_race", 5, ply )
 		end
 	elseif id == 4 then
 		if participate != 0 then
 			self:StopRace( ply )
 		else
-			self:SendRaceMessage( "You have to be a participant"..self.SeparationSign.."to reset the race", 5, ply )
+			self:SendRaceMessage( "#checkpoint.you_have_to_be_participant"..self.SeparationSign.."#checkpoint.to_reset_race", 5, ply )
 		end
 	elseif id == 5 then
 
 		if participate != 0 then
 			self:AddLap( ply )
 		elseif RaceHandler:RaceIsStarted( self.RaceID ) then
-			self:SendRaceMessage( "You have to wait untill the race is finished", 5, ply )
+			self:SendRaceMessage( "#checkpoint.you_have_to_wait_untill", 5, ply )
 		else
-			self:SendRaceMessage( "You have to be a participant"..self.SeparationSign.."to change nr of laps", 5, ply )
+			self:SendRaceMessage( "#checkpoint.you_have_to_be_participant"..self.SeparationSign.."#checkpoint.to_change_nr", 5, ply )
 		end
 	end
 
@@ -176,7 +176,7 @@ function ENT:StartRace( ply )
 			self.CheckPointOwner:StartRace( ply )
 			self.RaceOn = true
 			local players, nr = RaceHandler:GetAllParticipators( self.RaceID )
-			local ms = ply:Nick().." started the race countdown!"
+			local ms = ply:Nick().."#checkpoint.started_the_race"
 			for i = 1, nr do
 				if players[i] then
 					self:SendRaceMessage( ms, 5, players[i] )

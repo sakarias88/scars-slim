@@ -1,6 +1,6 @@
 
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Health"
+TOOL.Name			= "#tool.carhealth.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -11,21 +11,6 @@ TOOL.ClientConVar = {
 }
 
 if CLIENT then
-	language.Add( "Tool_carhealth_CarHealth", "Car Health" )
-	language.Add( "Tool_carhealth_CanTakeDamage", "Car Damage" )
-	language.Add( "Tool_carhealth_CanTakeDamage_desc", "Turn car damage on or off" )
-
-	language.Add( "Tool_carhealth_CanTakeWheelDamage", "Wheel Damage" )
-	language.Add( "Tool_carhealth_CanTakeWheelDamage_desc", "Turn wheel damage on or off" )
-	
-	language.Add( "Tool.carhealth.name", "Car Health" )
-	language.Add( "Tool.carhealth.desc", "Change the health on the cars" )
-	language.Add( "Tool.carhealth.0", "Primary fire to paste and secondary fire to copy" )
-	
-	
-	language.Add( "Undone_Repair", "Undone Repair Station" )
-	language.Add( "Cleanup_Repair", "SCar Repair Station" )
-	language.Add( "Cleaned_Repair", "Repair Station Removed" )	
 end
 
 function TOOL:LeftClick( trace )
@@ -115,20 +100,20 @@ function TOOL.BuildCPanel( CPanel )
 	
 
 	
-	CPanel:AddControl( "Slider", { Label = "#Tool_carhealth_CarHealth",
+	CPanel:AddControl( "Slider", { Label = "#tool_carhealth_carhealth",
 									 Description = "",
 									 Type = "float",
 									 Min = 100,
 									 Max = 1000,
 									 Command = "carhealth_CarHealth" } )
 									 
-	CPanel:AddControl( "CheckBox", { Label = "#Tool_carhealth_CanTakeDamage",
-									 Description = "#Tool_carhealth_CanTakeDamage_desc",
+	CPanel:AddControl( "CheckBox", { Label = "#tool_carhealth_cantakedamage",
+									 Description = "#tool_carhealth_cantakedamage_desc",
 									 Command = "carhealth_CanTakeDamage" } )								 
 
-	CPanel:AddControl( "CheckBox", { Label = "#Tool_carhealth_CanTakeWheelDamage",
-									 Description = "#Tool_carhealth_CanTakeWheelDamage_desc",
+	CPanel:AddControl( "CheckBox", { Label = "#tool_carhealth_cantakewheeldamage",
+									 Description = "#tool_carhealth_cantakewheeldamage_desc",
 									 Command = "carhealth_CanTakeWheelDamage" } )			
 
-	CPanel:AddControl( "Label", { Text = "Press RELOAD to spawn a repair station", Description = "" } )									 
+	CPanel:AddControl( "Label", { Text = "#tool_carhealth_pressreload_to_spawn", Description = "" } )									 
 end

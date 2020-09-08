@@ -1,5 +1,5 @@
 TOOL.Category		= "SCars"
-TOOL.Name			= "#CheckPoint Spawner"
+TOOL.Name			= "#tool.carcheckpointspawner.name"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -12,16 +12,7 @@ bcol = "0",
 }
 cleanup.Register( "SCarCheckPoint" )
 
-if CLIENT then
-
-	language.Add( "Tool.carcheckpointspawner.name", "CheckPoint spawner" )	
-	language.Add( "Tool.carcheckpointspawner.desc", "Spawn CheckPoints" )		
-	language.Add( "Tool.carcheckpointspawner.0", "Primary fire: spawn" )	
-	language.Add( "Tool_TrackID", "Track ID" )
-	
-	language.Add( "Undone_SCarCheckPoint", "Undone SCar CheckPoint" )
-	language.Add( "Cleanup_SCarCheckPoint", "SCar CheckPoint" )
-	language.Add( "Cleaned_SCarCheckPoint", "CheckPoints Removed" )		
+if CLIENT then	
 end
 
 function TOOL:LeftClick( trace )
@@ -78,18 +69,18 @@ end
 
 function TOOL.BuildCPanel( CPanel )
 								 
-	CPanel:AddControl( "Slider", { Label = "#Tool_TrackID",
+	CPanel:AddControl( "Slider", { Label = "#tool_trackid",
 									 Description = "",
 									 Type = "int",
 									 Min = 1,
 									 Max = 10,
 									 Command = "carcheckpointspawner_TrackID" } )
 									 
-	CPanel:AddControl( "TextBox", {	Label		= "Text",
+	CPanel:AddControl( "TextBox", {	Label		= "#tool.caraispawner_text",
 									MaxLength	= "12",
 									Command		= "carcheckpointspawner_cpstr" })		
 
-    CPanel:AddControl( "Color",  { Label    = "#Color",
+    CPanel:AddControl( "Color",  { Label    = "#tool.caraispawner_color",
                                     Red            = "carcheckpointspawner_rcol",
                                     Green        = "carcheckpointspawner_gcol",
                                     Blue        = "carcheckpointspawner_bcol",

@@ -1,5 +1,5 @@
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Node Spawner"
+TOOL.Name			= "#tool.carnodespawner.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -11,15 +11,6 @@ cleanup.Register( "SCarNode" )
 include("autorun/s_scarnodehandler.lua")
 
 if CLIENT then
-
-	language.Add( "Tool.carnodespawner.name", "AI Node spawner" )	
-	language.Add( "Tool.carnodespawner.desc", "Spawn Nodes" )		
-	language.Add( "Tool.carnodespawner.0", "Primary fire: spawn" )	
-	language.Add( "Tool_TrackID", "Track ID" )
-
-	language.Add( "Undone_SCarNode", "Undone SCar Node" )
-	language.Add( "Cleanup_SCarNode", "SCar Node" )
-	language.Add( "Cleaned_SCarNode", "Nodes Removed" )		
 end
 
 function TOOL:LeftClick( trace )
@@ -61,7 +52,7 @@ end
 
 function TOOL.BuildCPanel( CPanel )
 								 
-	CPanel:AddControl( "Slider", { Label = "#Tool_TrackID",
+	CPanel:AddControl( "Slider", { Label = "#tool_trackid",
 									 Description = "",
 									 Type = "int",
 									 Min = 1,

@@ -1,6 +1,6 @@
 
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Neon lights"
+TOOL.Name			= "#tool.carneonlights.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -21,16 +21,6 @@ TOOL.ClientConVar = {
 }
 
 if CLIENT then
-
-
-	language.Add( "Tool_Car_neonlightsize", "Light size" )	
-	language.Add( "Tool_Car_neonlightsfade", "Fade time" )
-	language.Add( "Tool_Car_neonlightsstay", "Stay time" )
-	
-	language.Add( "Tool.carneonlights.name", "Car Neon lights" )
-	language.Add( "Tool.carneonlights.desc", "Put some neon lights under your car" )
-	language.Add( "Tool.carneonlights.0", "Primary fire to apply, secondary fire to copy settings, reload to remove neon lights" )
-	
 end
 
 function TOOL:LeftClick( trace )
@@ -103,7 +93,7 @@ end
 function TOOL.BuildCPanel( CPanel )
 
 	local slider = {}
-	slider.Label = "#Tool_Car_neonlightsize"
+	slider.Label = "#tool_car_neonlightsize"
 	slider.Description = ""
 	slider.Type = "float"
 	slider.Min = 50
@@ -111,7 +101,7 @@ function TOOL.BuildCPanel( CPanel )
 	slider.Command = "carneonlights_lightsize" 
 	CPanel:AddControl( "Slider", slider )	
 	
-	slider.Label = "#Tool_Car_neonlightsstay"
+	slider.Label = "#tool_car_neonlightsstay"
 	slider.Description = ""
 	slider.Type = "float"
 	slider.Min = 0
@@ -120,7 +110,7 @@ function TOOL.BuildCPanel( CPanel )
 	CPanel:AddControl( "Slider", slider )	
 	
 	
-	slider.Label = "#Tool_Car_neonlightsfade"
+	slider.Label = "#tool_car_neonlightsfade"
 	slider.Description = ""
 	slider.Type = "float"
 	slider.Min = 0
@@ -131,7 +121,7 @@ function TOOL.BuildCPanel( CPanel )
 			
 					 
 	local color = {}
-	color.Label = "Colour one"
+	color.Label = "#tool_car_colour_one"
 	color.Red = "carneonlights_col1r"
 	color.Green = "carneonlights_col1g"
 	color.Blue = "carneonlights_col1b"
@@ -143,7 +133,7 @@ function TOOL.BuildCPanel( CPanel )
 	CPanel:AddControl("Color", color)
 	
 	
-	color.Label = "Colour 2"
+	color.Label = "#tool_car_colour_two"
 	color.Red = "carneonlights_col2r"
 	color.Green = "carneonlights_col2g"
 	color.Blue = "carneonlights_col2b"

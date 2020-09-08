@@ -1,6 +1,6 @@
 
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Fuel"
+TOOL.Name			= "#tool.carfuel.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -13,20 +13,6 @@ TOOL.ClientConVar = {
 cleanup.Register( "Fuel" )
 
 if CLIENT then
-
-	language.Add( "Tool_Car_FuelConsumptionUse", "Fuel Consumption:" )	
-
-	language.Add( "Tool_Car_fuel", "Fuel Consumption" )
-	language.Add( "Tool_Car_fuel_desc", "Turn Fuel consumption on or off" )
-	
-	language.Add( "Tool.carfuel.name", "Car Fuel" )
-	language.Add( "Tool.carfuel.desc", "Change the fuel properties on the car" )
-	language.Add( "Tool.carfuel.0", "Primary fire to paste, secondary fire to copy, reload to spawn gas pump" )
-
-	language.Add( "Undone_Fuel", "Undone Gas Pump" )
-	language.Add( "Cleanup_Fuel", "SCar Gas Pump" )
-	language.Add( "Cleaned_Fuel", "Gas Pump Removed" )	
-	
 end
 
 function TOOL:LeftClick( trace )
@@ -117,16 +103,16 @@ end
 function TOOL.BuildCPanel( CPanel )
 											 
 					 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_FuelConsumptionUse",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_fuelconsumptionuse",
 									 Description = "",
 									 Type = "float",
 									 Min = 0.5,
 									 Max = 20,
 									 Command = "carfuel_FuelConsumption" } )										 
 									 
-	CPanel:AddControl( "CheckBox", { Label = "#Tool_Car_fuel",
-									 Description = "#Tool_Car_fuel_desc",
+	CPanel:AddControl( "CheckBox", { Label = "#tool_car_fuel",
+									 Description = "#tool_car_fuel_desc",
 									 Command = "carfuel_FuelConsumptionUse" } )	
 									 
-	CPanel:AddControl( "Label", { Text = "Press RELOAD to spawn a gas pump", Description = "" } )	
+	CPanel:AddControl( "Label", { Text = "#tool_car_fuelpress_reload_gas", Description = "" } )	
 end
