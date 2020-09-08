@@ -1,5 +1,5 @@
 local AI = {}
-AI.Title = "Derby"
+AI.Title = "#tool.caraispawner.derby"
 AI.Author = "Sakarias88"
 
 AI.CollisionTimer = CurTime()

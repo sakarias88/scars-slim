@@ -1,5 +1,5 @@
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Spawner"
+TOOL.Name			= "#tool.carspawner.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -13,16 +13,6 @@ TOOL.ClientConVar = {
 }
 
 if CLIENT then
-
-	language.Add( "Tool.carspawner.name", "Car spawner" )	
-	language.Add( "Tool.carspawner.desc", "Spawn Cars" )		
-	language.Add( "Tool.carspawner.0", "Primary fire: spawn" )
-	language.Add( "Undone_Cars", "Undone Car" )
-	
-	language.Add( "Undone_SCars", "Undone SCar" )
-	language.Add( "Cleanup_SCars", "SCars" )
-	language.Add( "Cleaned_SCars", "SCars Removed" )		
-
 end
 
 function TOOL:Deploy()
@@ -30,7 +20,7 @@ function TOOL:Deploy()
 	  local CPanel = controlpanel.Get( "carspawner" )
 	  if ( !CPanel ) then return end
 	  CPanel:ClearControls()
-		CPanel:AddControl( "Header", { Text = "#Tool_carspawner_name", Description	= "#Tool_carspawner_desc" }  )									 
+		CPanel:AddControl( "Header", { Text = "#tool_carspawner_name", Description	= "#tool_carspawner_desc" }  )									 
 				
 		ThaMaterialBox = {}
 		ThaMaterialBox.Label = "Cars"

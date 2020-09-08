@@ -1,5 +1,5 @@
 TOOL.Category		= "SCars"
-TOOL.Name			= "#AI Spawner"
+TOOL.Name			= "#tool.caraispawner.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -11,14 +11,6 @@ cleanup.Register( "SCarAI" )
 
 
 if CLIENT then
-
-	language.Add( "Tool.caraispawner.name", "Spawn AI" )	
-	language.Add( "Tool.caraispawner.desc", "Spawn AIs" )		
-	language.Add( "Tool.caraispawner.0", "Primary fire: spawn Secondary fire: remove ai from SCar" )	
-	
-	language.Add( "Undone_SCarAI", "Undone SCar AI" )
-	language.Add( "Cleanup_SCarAI", "SCar AI" )
-	language.Add( "Cleaned_SCarAI", "AI's Removed" )			
 end
 
 function TOOL:LeftClick( trace )
@@ -84,7 +76,7 @@ function TOOL.BuildCPanel( CPanel )
 		
 
 	local combobox = {}
-	combobox.Label = "AI Type"
+	combobox.Label = "#tool.caraispawner_ai_type"
 	combobox.Description = ""
 	combobox.MenuButton = "0"
 	combobox.Options = {}

@@ -1,5 +1,5 @@
 local AI = {}
-AI.Title = "Follow Player Car Keys"
+AI.Title = "#tool.caraispawner.follow_car"
 AI.Author = "Sakarias88"
 AI.IsState = true 
 

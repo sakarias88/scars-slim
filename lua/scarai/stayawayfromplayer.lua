@@ -1,5 +1,5 @@
 local AI = {}
-AI.Title = "Stay away from player"
+AI.Title = "#tool.caraispawner.stay_away"
 AI.Author = "Sakarias88"
 
 AI.CollisionTimer = CurTime()

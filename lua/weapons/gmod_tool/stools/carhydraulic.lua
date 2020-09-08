@@ -1,6 +1,6 @@
 
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Hydraulics"
+TOOL.Name			= "#tool.carhydraulic.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -11,14 +11,6 @@ TOOL.ClientConVar = {
 }
 
 if CLIENT then
-	language.Add( "Tool_CarHydraulic_SuspensionAddHeight", "Suspension Add Height" )
-	language.Add( "Tool_CarHydraulic_Active", "Active" )
-	language.Add( "Tool_CarHydraulic_Active_desc", "Enable or disable this feature" )
-	
-	language.Add( "Tool.carhydraulic.name", "Car Hydraulics" )
-	language.Add( "Tool.carhydraulic.desc", "Can change the hydraulic settings" )
-	language.Add( "Tool.carhydraulic.0", "Primary fire to paste and secondary fire to copy" )
-	
 end
 
 function TOOL:LeftClick( trace )
@@ -79,7 +71,7 @@ end
 function TOOL.BuildCPanel( CPanel )
 	
 	// HEADER
-	CPanel:AddControl( "Header", { Text = "Carframes", Description	= "Suspension Add Height" }  )	
+	CPanel:AddControl( "Header", { Text = "Carframes", Description	= "#tool_carhydraulic_suspensionaddheight" }  )	
 	
 	CPanel:AddControl( "Slider", { Label = "",
 									 Description = "",
@@ -88,8 +80,8 @@ function TOOL.BuildCPanel( CPanel )
 									 Max = 30,
 									 Command = "carhydraulic_SuspensionAddHeight" } )
 									 
-	CPanel:AddControl( "CheckBox", { Label = "#Tool_CarHydraulic_Active",
-									 Description = "#Tool_CarHydraulic_Active_desc",
+	CPanel:AddControl( "CheckBox", { Label = "#tool_carhydraulic_active",
+									 Description = "#tool_carhydraulic_active_desc",
 									 Command = "carhydraulic_Active" } )								 
 									 
 end

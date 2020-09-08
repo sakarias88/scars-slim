@@ -1,6 +1,6 @@
 
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Suspension"
+TOOL.Name			= "#tool.carsuspension.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -24,19 +24,6 @@ TOOL.OldHeightRear = 0
 
 
 if CLIENT then
-	language.Add( "Tool_Car_SoftnesFront", "Front: Soft - Hard" )
-	language.Add( "Tool_Car_SoftnesRear", "Rear: Soft - Hard" )	
-
-	language.Add( "Tool_Car_HeightFront", "Front: Height" )
-	language.Add( "Tool_Car_HeightRear", "Rear: Height" )	
-	
-	language.Add( "Tool_Car_LiveAction", "Live Action" )
-	language.Add( "Tool_Car_LiveAction_desc", "Sets the suspensionsettings live" )
-	
-	language.Add( "Tool.carsuspension.name", "Car Suspension" )
-	language.Add( "Tool.carsuspension.desc", "Can adjust the suspension" )
-	language.Add( "Tool.carsuspension.0", "Primary fire to paste and secondary fire to copy" )
-	
 end
 
 function TOOL:LeftClick( trace )
@@ -165,42 +152,42 @@ function TOOL.BuildCPanel( CPanel )
 
 	// HEADER
 	
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_SoftnesFront",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_softnesfront",
 									 Description = "",
 									 Type = "float",
 									 Min = -30,
 									 Max = 30,
 									 Command = "carsuspension_SoftnesFront" } )
 									 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_SoftnesRear",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_softnesrear",
 									 Description = "",
 									 Type = "float",
 									 Min = -30,
 									 Max = 30,
 									 Command = "carsuspension_SoftnesRear" } )
 									 
-	CPanel:AddControl( "CheckBox", { Label = "#Tool_Car_LiveAction",
-									 Description = "#Tool_Car_LiveAction_desc",
+	CPanel:AddControl( "CheckBox", { Label = "#tool_car_liveaction",
+									 Description = "#tool_car_liveaction_desc",
 									 Command = "carsuspension_liveAction2" } )								 
 									 
 CPanel:AddControl( "Label", { Text = "________________________________________", Description = "" } )									 
 									 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_HeightFront",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_heightfront",
 									 Description = "",
 									 Type = "float",
 									 Min = -30,
 									 Max = 30,
 									 Command = "carsuspension_HeightFront" } )
 									 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_HeightRear",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_heightrear",
 									 Description = "",
 									 Type = "float",
 									 Min = -30,
 									 Max = 30,
 									 Command = "carsuspension_HeightRear" } )									 
 									 
-	CPanel:AddControl( "CheckBox", { Label = "#Tool_Car_LiveAction",
-									 Description = "#Tool_Car_LiveAction_desc",
+	CPanel:AddControl( "CheckBox", { Label = "#tool_car_liveaction",
+									 Description = "#tool_car_liveaction_desc",
 									 Command = "carsuspension_liveAction" } )
 									 
 end

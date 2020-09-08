@@ -1,6 +1,6 @@
 
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Tuner"
+TOOL.Name			= "#tool.cartuning.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -29,38 +29,6 @@ TOOL.ClientConVar = {
 
 
 if CLIENT then
-	language.Add( "Tool_Car_BreakEfficiency", "Brake Force" )
-	language.Add( "Tool_Car_ReverseForce", "Reverse Power:" )	
-	language.Add( "Tool_Car_ReverseMaxSpeed", "Reverse Max Speed:" )		
-	language.Add( "Tool_Car_TurboEffect", "Turbo Effect (multiplier):" )
-	language.Add( "Tool_Car_TurboDuration", "Turbo Duration (in seconds):" )
-	language.Add( "Tool_Car_TurboDelay", "Turbo Delay (in seconds):" )	
-	language.Add( "Tool_Car_Acceleration", "Power:" )
-	language.Add( "Tool_Car_SteerForce", "Steer Force:" )	
-	language.Add( "Tool_Car_MaxSpeed", "Max Speed:" )
-	language.Add( "Tool_Car_NrOfGears", "Nr Of Gears:" )		
-
-	language.Add( "Tool_Car_SteerResponse", "Steer Response:" )	
-	language.Add( "Tool_Car_Stabilisation", "Stabilisation:" )	
-	language.Add( "Tool_Car_AntiSlide", "AntiSlide:" )	
-	language.Add( "Tool_Car_AutoStraighten", "AutoStraighten:" )	
-	
-	language.Add( "Tool_Car_rtlamps", "Use RT lamps" )
-	language.Add( "Tool_Car_rtlamps_desc", "Turn RT lamps on or off" )
-	
-	language.Add( "Tool_Car_hud", "Use HUD" )
-	language.Add( "Tool_Car_hud_desc", "Turn the HUD on or off" )
-
-	language.Add( "Tool_Car_ThirdPersonView", "Use Third Person View" )
-	language.Add( "Tool_Car_ThirdPersonView_desc", "Turn the third person view on or off" )
-
-	language.Add( "Tool_Car_CameraCorrection", "Use Camera Correction" )
-	language.Add( "Tool_Car_CameraCorrection_desc", "Camera Correction will help you turn your head" )
-	
-	language.Add( "Tool.cartuning.name", "Car Tuner" )
-	language.Add( "Tool.cartuning.desc", "Can tune cars with it" )
-	language.Add( "Tool.cartuning.0", "Primary fire to paste and secondary fire to copy" )
-	
 end
 
 function TOOL:LeftClick( trace )
@@ -281,14 +249,14 @@ end
 
 function TOOL.BuildCPanel( CPanel )
 	
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_Acceleration",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_acceleration",
 									 Description = "",
 									 Type = "float",
 									 Min = 0,
 									 Max = 10000,
 									 Command = "cartuning_Acceleration" } )		
 								 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_MaxSpeed",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_maxspeed",
 									 Description = "",
 									 Type = "float",
 									 Min = 10,
@@ -297,21 +265,21 @@ function TOOL.BuildCPanel( CPanel )
 
 CPanel:AddControl( "Label", { Text = "________________________________________\n", Description = "" } )	
 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_TurboEffect",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_turboeffect",
 									 Description = "",
 									 Type = "float",
 									 Min = 1,
 									 Max = 5,
 									 Command = "cartuning_TurboEffect" } )
 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_TurboDuration",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_turboduration",
 									 Description = "",
 									 Type = "float",
 									 Min = 1,
 									 Max = 10,
 									 Command = "cartuning_TurboDuration" } )
 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_TurboDelay",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_turbodelay",
 									 Description = "",
 									 Type = "float",
 									 Min = 1,
@@ -321,21 +289,21 @@ CPanel:AddControl( "Label", { Text = "________________________________________\n
 									 
 CPanel:AddControl( "Label", { Text = "________________________________________\n", Description = "" } )										 
 									 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_ReverseForce",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_reverseforce",
 									 Description = "",
 									 Type = "float",
 									 Min = 0,
 									 Max = 5000,
 									 Command = "cartuning_ReverseForce" } )					 
 									 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_ReverseMaxSpeed",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_reversemaxspeed",
 									 Description = "",
 									 Type = "float",
 									 Min = 0,
 									 Max = 1000,
 									 Command = "cartuning_ReverseMaxSpeed" } )								 
 									 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_BreakEfficiency",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_breakefficiency",
 									 Description = "",
 									 Type = "float",
 									 Min = 0,
@@ -345,14 +313,14 @@ CPanel:AddControl( "Label", { Text = "________________________________________\n
 CPanel:AddControl( "Label", { Text = "________________________________________\n", Description = "" } )											 
 					 								 									 
 									 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_SteerForce",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_steerforce",
 									 Description = "",
 									 Type = "float",
 									 Min = 0,
 									 Max = 20,
 									 Command = "cartuning_SteerForce" } )										 
 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_SteerResponse",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_steerresponse",
 									 Description = "",
 									 Type = "float",
 									 Min = 0,
@@ -361,28 +329,28 @@ CPanel:AddControl( "Label", { Text = "________________________________________\n
 
 CPanel:AddControl( "Label", { Text = "________________________________________\n", Description = "" } )
 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_Stabilisation",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_stabilisation",
 									 Description = "",
 									 Type = "int",
 									 Min = 0,
 									 Max = 4000,
 									 Command = "cartuning_Stabilisation" } )									 		 
 									 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_NrOfGears",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_nrofgears",
 									 Description = "",
 									 Type = "int",
 									 Min = 1,
 									 Max = 10,
 									 Command = "cartuning_NrOfGears" } )									 
 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_AntiSlide",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_antislide",
 									 Description = "",
 									 Type = "float",
 									 Min = 0,
 									 Max = 100,
 									 Command = "cartuning_AntiSlide" } )			
 
-	CPanel:AddControl( "Slider", { Label = "#Tool_Car_AutoStraighten",
+	CPanel:AddControl( "Slider", { Label = "#tool_car_autostraighten",
 									 Description = "",
 									 Type = "float",
 									 Min = 0,
@@ -391,13 +359,13 @@ CPanel:AddControl( "Label", { Text = "________________________________________\n
 
 		--[[								 
 	CPanel:AddControl( "Label", { Text = "Engine sound", Description = "" } )	
-	CPanel:AddControl( "ComboBox", { Label = "#Tool_Car_Sounds",
+	CPanel:AddControl( "ComboBox", { Label = "#tool_car_sounds",
 									 Description = "",
 									 MenuButton = "0",
 									 Options = list.Get( "SCarEngineSounds" ) } )			
 
 	CPanel:AddControl( "Label", { Text = "Horn sound", Description = "" } )	
-	CPanel:AddControl( "ComboBox", { Label = "#Tool_Car_HornSounds",
+	CPanel:AddControl( "ComboBox", { Label = "#tool_car_hornsounds",
 									 Description = "",
 									 MenuButton = "0",
 									 Options = list.Get( "SCarHornSounds" ) } )	

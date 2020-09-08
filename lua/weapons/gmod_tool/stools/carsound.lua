@@ -1,6 +1,6 @@
 
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Sounds and effects"
+TOOL.Name			= "#tool.carsound.title"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -23,13 +23,6 @@ TOOL.ClientConVar = {
 }
 
 if CLIENT then
-	language.Add( "Tool_Car_Sounds", "Engine Sound:" )	
-	language.Add( "Tool_Car_HornSounds", "Horn Sound:" )
-	language.Add( "Tool_Car_ExhaustEffect", "Engine Effect:" )
-	
-	language.Add( "Tool.carsound.name", "Sounds" )
-	language.Add( "Tool.carsound.desc", "Change the sounds the car uses" )
-	language.Add( "Tool.carsound.0", "Primary fire to paste, secondary fire to copy" )
 end
 
 function TOOL:LeftClick( trace )
@@ -146,19 +139,19 @@ function TOOL.BuildCPanel( CPanel )
 											 
 					 
 	CPanel:AddControl( "Label", { Text = "", Description = "" } )	
-	CPanel:AddControl( "ComboBox", { Label = "#Tool_Car_Sounds",
+	CPanel:AddControl( "ComboBox", { Label = "#tool_car_sounds",
 									 Description = "",
 									 MenuButton = "0",
 									 Options = list.Get( "SCarEngineSounds" ) } )			
 
 	CPanel:AddControl( "Label", { Text = "", Description = "" } )	
-	CPanel:AddControl( "ComboBox", { Label = "#Tool_Car_HornSounds",
+	CPanel:AddControl( "ComboBox", { Label = "#tool_car_hornsounds",
 									 Description = "",
 									 MenuButton = "0",
 									 Options = list.Get( "SCarHornSounds" ) } )	
 									 
 	CPanel:AddControl( "Label", { Text = "", Description = "" } )	
-	CPanel:AddControl( "ComboBox", { Label = "#Tool_Car_ExhaustEffect",
+	CPanel:AddControl( "ComboBox", { Label = "#tool_car_exhausteffect",
 									 Description = "",
 									 MenuButton = "0",
 									 Options = list.Get( "SCarGearEffect" ) } )
@@ -166,7 +159,7 @@ function TOOL.BuildCPanel( CPanel )
 	CPanel:AddControl( "Label", { Text = "", Description = "" } )	
 	
 	local EngineButton = vgui.Create("DButton")
-	EngineButton:SetText("Play Engine Sound")
+	EngineButton:SetText("#tool_car_playenginesound")
 	EngineButton.DoClick = function()
 		if LocalPlayer():GetTool() and LocalPlayer():GetTool().PlayEngine then
 			LocalPlayer():GetTool():PlayEngine()
@@ -175,7 +168,7 @@ function TOOL.BuildCPanel( CPanel )
 	CPanel:AddItem(EngineButton)
 	
 	local HornButton = vgui.Create("DButton")
-	HornButton:SetText("Play Horn Sound")
+	HornButton:SetText("#tool_car_playhornsound")
 	HornButton.DoClick = function()
 		if LocalPlayer():GetTool() and LocalPlayer():GetTool().PlayHorn then
 			LocalPlayer():GetTool():PlayHorn()
