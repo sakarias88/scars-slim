@@ -1,5 +1,5 @@
 local AI = {}
-AI.Title = "Node follower"
+AI.Title = "#tool.caraispawner.node_follow"
 AI.Author = "Sakarias88"
 
 function AI:Think() --Runs 5 times per sec

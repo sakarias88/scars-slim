@@ -93,7 +93,7 @@ function ENT:Draw()
 				
 				if i == 1 then
 					draw.RoundedBox( 0, -self.BoxWidth, (((i * self.HScale) - self.BoxHeight) - (self.HScale / 2)) , (self.BoxWidth * 2), self.HScale, Color(0,255,0,150))
-					draw.DrawText( "Participants", "participatorText", 0, (((i * self.HScale) - self.BoxHeight) - (self.HScale / 2) + self.YOffset), Color(255, 255, 255, 255), TEXT_ALIGN_CENTER )					
+					draw.DrawText( "#checkpoint.participants", "participatorText", 0, (((i * self.HScale) - self.BoxHeight) - (self.HScale / 2) + self.YOffset), Color(255, 255, 255, 255), TEXT_ALIGN_CENTER )					
 				else
 					draw.RoundedBox( 0, -self.BoxWidth, (((i * self.HScale) - self.BoxHeight) - (self.HScale / 2)), (self.BoxWidth * 2), self.HScale, Color((255 - i*20) ,0,0,150))
 					draw.DrawText( self.TxtTbl[i-1], "participatorText", 0, (((i * self.HScale) - self.BoxHeight) - (self.HScale / 2) + self.YOffset), Color(255, 255, 255, 255), TEXT_ALIGN_CENTER )					

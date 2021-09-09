@@ -1,6 +1,6 @@
 
 TOOL.Category		= "SCars"
-TOOL.Name			= "#Wheel changer"
+TOOL.Name			= "#tool.wheelchanger.name"
 TOOL.Command		= nil
 TOOL.ConfigName		= ""
 
@@ -11,11 +11,6 @@ TOOL.ClientConVar = {
 }
 
 if CLIENT then
-
-	language.Add( "Tool.wheelchanger.name", "Wheel changer" )	
-	language.Add( "Tool.wheelchanger.desc", "Change the wheels on the cars" )		
-	language.Add( "Tool.wheelchanger.0", "Primary fire: Change wheel" )	
-
 end
 
 
@@ -24,7 +19,7 @@ function TOOL:Deploy()
 	  local CPanel = controlpanel.Get( "carspawner" )
 	  if ( !CPanel ) then return end
 		CPanel:ClearControls()
-		CPanel:AddControl( "Header", { Text = "#Tool_wheelchanger_name", Description	= "#Tool_wheelchanger_desc" }  )				
+		CPanel:AddControl( "Header", { Text = "#tool_wheelchanger_name", Description	= "#tool_wheelchanger_desc" }  )				
 
 		ThaMaterialBox = {}
 		ThaMaterialBox.Label = "Wheels"
@@ -36,8 +31,8 @@ function TOOL:Deploy()
 
 		CPanel:AddControl("MaterialGallery", ThaMaterialBox)
 
-		CPanel:AddControl( "Label", { Text = "Wheel physical properties", Description = "" } )	
-		CPanel:AddControl( "ComboBox", { Label = "#Tool_Car_Sounds",
+		CPanel:AddControl( "Label", { Text = "#tool_wheelchanger_physical_properties", Description = "" } )	
+		CPanel:AddControl( "ComboBox", { Label = "#tool_car_sounds",
 										 Description = "",
 										 MenuButton = "0",
 										 Options = list.Get( "physMaterials" ) } )	
@@ -124,7 +119,7 @@ function TOOL.BuildCPanel( CPanel )
 
 	CPanel:AddControl( "Label", { Text = "Wheel physical properties", Description = "" } )	
 
-	CPanel:AddControl( "ComboBox", { Label = "#Tool_Car_Sounds",
+	CPanel:AddControl( "ComboBox", { Label = "#tool_car_sounds",
 									 Description = "",
 									 MenuButton = "0",
 									 Options = list.Get( "physMaterials" ) } )	

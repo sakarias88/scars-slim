@@ -3,7 +3,7 @@
 //I just changed some simple things so it will fit with my addon
 
 TOOL.Category	= "SCars"
-TOOL.Name       = "#Paint Job Switcher"
+TOOL.Name       = "#tool.paintjobswitcher.name"
 TOOL.Command    = nil
 TOOL.ConfigName = nil
 
@@ -22,14 +22,10 @@ if ( CLIENT ) then
 
 local colorswitcherPreviousEntity = nil
 
-language.Add("Tool.paintjobswitcher.name", "Paint Job Switcher")
-language.Add("Tool.paintjobswitcher.desc", "Changes the paint job on the car.")
-language.Add("Tool.paintjobswitcher.0", "Left click to cycle paint job. \nRight click to select a car for manipulation.\nReload to pick a random paint job.")
-
 function TOOL.BuildCPanel( CPanel, SwitchEntity )
 
-  CPanel:AddControl( "Header", { Text = "#Tool.paintjobswitcher.name", 
-                                 Description	= "#Tool.paintjobswitcher.desc" 
+  CPanel:AddControl( "Header", { Text = "#tool.paintjobswitcher.name", 
+                                 Description	= "#tool.paintjobswitcher.desc" 
                                }  )
                                
   if IsValid(SwitchEntity) then
@@ -45,10 +41,10 @@ function TOOL.BuildCPanel( CPanel, SwitchEntity )
 		CPanel:AddItem(DermaNumSlider)
 
     else
-      CPanel:AddControl("Label", { Text = "This car only has one paint job." } )
+      CPanel:AddControl("Label", { Text = "#tool.paintjobswitcher.only_one_paint" } )
     end
   else
-    CPanel:AddControl("Label", { Text = "No car selected." } )
+    CPanel:AddControl("Label", { Text = "#tool.paintjobswitcher.no_car_selected" } )
   end
 end
 
