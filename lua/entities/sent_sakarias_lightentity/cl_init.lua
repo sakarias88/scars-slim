@@ -6,11 +6,11 @@ function ENT:Think()
 
 	if	SCarClientData["scar_usepointlights"] == true then
 
-		self.SCar = self:GetNetworkedEntity( "ParentEnt" )
+		self.SCar = self:GetNWEntity( "ParentEnt", NULL )
 
-		if self.SCar then
-			self.BrakeState = self.SCar:GetNetworkedInt( "BrakeState" )
-			if self.BrakeState != nil then
+		if self.SCar != NULL then
+			self.BrakeState = self.SCar:GetNWInt( "BrakeState", 0 )
+			if self.BrakeState != 0 then
 			
 				local light = DynamicLight( self:EntIndex() )
 				if self.BrakeState == 1 then
